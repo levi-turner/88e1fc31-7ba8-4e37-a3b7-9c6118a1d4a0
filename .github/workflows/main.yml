@@ -109,14 +109,12 @@ jobs:
 
           - name: Commit /diff if changes
             run: |
-                 git fetch origin
-                 git merge origin main
                  git add ./diff
                  GIT_STATUS=$(git status -uno -s)
                  if [ "$GIT_STATUS" ]; then
                      echo "git change summary: $GIT_STATUS"
                      git commit -m "Unbuilt .qvf files into /diff"
-                     git push -f origin main
+                     git push
                  else
                      echo "No changes found in /diff, skipping commit"
                  fi
