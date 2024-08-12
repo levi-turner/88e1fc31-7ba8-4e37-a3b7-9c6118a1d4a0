@@ -3,7 +3,7 @@ name: Unbuild app
 on:
     pull_request:
         types: [opened, synchronize]
-        branches: [ "stage" ]
+        branches: [ "main" ]
         paths:
           - 'assets/**'
 
