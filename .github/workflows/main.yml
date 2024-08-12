@@ -109,6 +109,8 @@ jobs:
 
           - name: Commit /diff if changes
             run: |
+                 git fetch origin
+                 git merge origin main
                  git add ./diff
                  GIT_STATUS=$(git status -uno -s)
                  if [ "$GIT_STATUS" ]; then
