@@ -114,7 +114,7 @@ jobs:
                  if [ "$GIT_STATUS" ]; then
                      echo "git change summary: $GIT_STATUS"
                      git commit -m "Unbuilt .qvf files into /diff"
-                     git push
+                     git push -f origin main
                  else
                      echo "No changes found in /diff, skipping commit"
                  fi
